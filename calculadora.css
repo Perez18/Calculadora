@@ -1,0 +1,35 @@
+table
+{
+
+ border: solid 2px black;
+ margin: 0 auto;
+ background: black;
+ height: 380px;
+ width: 260px;
+ border-radius: 10px;
+
+}
+
+table td button
+{
+    border: solid 2px black;
+    height: 50px;
+    width: 60px;
+    border-radius: 10px;
+    
+}
+
+
+#resultado
+
+{
+     display: block;
+
+    width: 250px;
+    height:100px;
+    border: solid 2px black;
+    background: greenyellow;
+    border-radius: 10px;
+
+
+}
