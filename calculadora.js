@@ -1,3 +1,7 @@
+var operaciona;
+var operacionb;
+var operacion;
+
 function init(){
 
 
@@ -15,7 +19,6 @@ function init(){
     var ocho = document.getElementById("ocho");
     var nueve= document.getElementById("nueve");
     var cero = document.getElementById("cero");
-    var coma = document.getElementById("coma");
     var igual = document.getElementById("igual");
     var clear = document.getElementById("clear");
     var resta = document.getElementById("resta");
@@ -23,7 +26,8 @@ function init(){
 
     //Eventos
 
-    uno.onclick = function(_e){
+    uno.onclick = function(_e)
+    {
 
         resultado.textContent = resultado.textContent + "1";
 
@@ -75,18 +79,97 @@ function init(){
       resultado.textContent = resultado.textContent + "0";
 
     }
-    clear.onclick = function(_e)
+
+
+   clear.onclick = function(_e)
+
+   {
+
+     cleaner();
+   }
+
+ 
+    suma.onclick = function(_e)
     {
-        
-        clear();
+      operaciona = resultado.textContent;
+      operacion = "+";
+      limpiar();
 
     }
-
+    resta.onclick = function(_e)
+    {
+      operaciona = resultado.textContent;
+      operacion = "-";
+      limpiar();
+    }
     
+    multiplicacion.onclick = function(_e)
+    {
+      operaciona = resultado.textContent;
+      operacion = "*";
+      limpiar();
+    }
+    dividir.onclick = function(_e)
+    {
+      operaciona = resultado.textContent;
+      operacion = "/";
+      limpiar();
+    }
 
+    igual.onclick = function(_e)
+    {
+      operacionb=resultado.textContent;
+      resolver();
+    }
+    
+}
 
+function limpiar()
+{
+  resultado.textContent = "";
+}
+
+function cleaner()
+{
+
+  resultado.textContent = "";
+ operaciona= 0;
+ operacionb = 0;
+ operacion = "";
 
 }
+
+
+
+function resolver()
+{
+  var res=0;
+switch (operacion)
+{
+  case "+":
+         
+      res = parseFloat(operaciona) + parseFloat(operacionb);
+      break;
+      
+  case "-":
+    res = parseFloat(operaciona) - parseFloat(operacionb);
+      break;
+
+  case "*":
+      res = parseFloat(operaciona) * parseFloat(operacionb);
+    break;
+
+  case "/":
+        res = parseFloat(operaciona) / parseFloat(operacionb);
+break;
+
+}
+cleaner();
+  resultado.textContent = res;
+
+}
+
+
 
     
 
